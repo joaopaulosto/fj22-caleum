@@ -1,15 +1,18 @@
 20/10/2018
 3.09 - Vale a pena testar classes de modelos? PAgia 51
 22/10/2018
-Exercio 3 - Página 56 
+Exercio 3 - Pï¿½gina 56 
 24/10/2018
 Captulo 4 - Trabalhando com XML
 Desafio Ordenar a Lista por data - Pagina 78
 
-Criando Cliente Java página 80
-Estou tentando criar um mock do XML das Negociações
+Criando Cliente Java pï¿½gina 80
+Estou tentando criar um mock do XML das Negociaï¿½ï¿½es
 
 https://thiagovespa.com.br/blog/2011/01/24/mocking-com-soapui/
 
-03/11/2018 - Pagina 85 - Introdução JSF
+03/11/2018 - Pagina 85 - Introduï¿½ï¿½o JSF
 04/11/2018 - Pagina 104 - Inicando o projeto (Wildfly)
+
+07/11/2018 - Projeto funcionando no tomcat
+PAgiba 112 - 7.11 PAra Saber mais sobre paginaÃ§Ã£o e ordenaÃ§Ã£o.

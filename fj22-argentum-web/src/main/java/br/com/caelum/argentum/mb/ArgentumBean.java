@@ -1,19 +1,42 @@
 package br.com.caelum.argentum.mb;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
+import org.primefaces.model.chart.LineChartModel;
+
+import br.com.caelum.argentum.modelo.Candle;
+import br.com.caelum.argentum.modelo.CandleFactory;
+import br.com.caelum.argentum.modelo.GeradorModeloGrafico;
 import br.com.caelum.argentum.modelo.Negociacao;
+import br.com.caelum.argentum.modelo.SerieTemporal;
 import br.com.caelum.argentum.ws.ClientWebService;
 
 @ManagedBean
-public class ArgentumBean {
+@ViewScoped
+public class ArgentumBean implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	private List<Negociacao> negociacaoes;
 
+	private LineChartModel modeloGrafico;
+
 	public ArgentumBean() {
 		this.negociacaoes = new ClientWebService().getNegociacoes();
+		
+		List<Candle> candles = new CandleFactory().constroiCandles(this.negociacaoes);
+		
+		SerieTemporal serie = new SerieTemporal(candles);
+		
+		GeradorModeloGrafico geradorGrafico = new GeradorModeloGrafico(serie, 2, serie.getUltimaPosicao());
+		
+		geradorGrafico.plotaMediaMovelSimples();
+		
+		this.modeloGrafico = geradorGrafico.getModeloGrafico();
+
 	}
 
 	public List<Negociacao> getNegociacaoes() {

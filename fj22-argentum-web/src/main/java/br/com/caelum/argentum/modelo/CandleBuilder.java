@@ -40,9 +40,9 @@ public class CandleBuilder {
 		return this;
 	}
 
-	public Candlestick geraCandle() {
+	public Candle geraCandle() {
 		validaCamposPreenchido();
-		return new Candlestick(this.abertura, this.fechamento, this.minimo, this.maximo, this.volume, this.data);
+		return new Candle(this.abertura, this.fechamento, this.minimo, this.maximo, this.volume, this.data);
 	}
 
 	private void validaCamposPreenchido() {

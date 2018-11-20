@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import br.com.caelum.argentum.ordenacao.NegociacaoSort;
 
-public class CandlestickFactoryTest {
+public class CandleFactoryTest {
 
 	private Calendar getHoje() {
 		return Calendar.getInstance();
@@ -26,7 +26,7 @@ public class CandlestickFactoryTest {
 
 		List<Negociacao> negociacoes = Arrays.asList(n1);
 
-		Candlestick candle = new CandlestickFactory().constroiCandleParaData(hoje, negociacoes);
+		Candle candle = new CandleFactory().constroiCandleParaData(hoje, negociacoes);
 
 		assertEquals(40.5, candle.getAbertura(), 0.00001);
 		assertEquals(40.5, candle.getFechamento(), 0.00001);
@@ -48,8 +48,8 @@ public class CandlestickFactoryTest {
 
 		List<Negociacao> negociacoes = Arrays.asList(n1, n2, n3, n4);
 
-		CandlestickFactory fabrica = new CandlestickFactory();
-		Candlestick candle = fabrica.constroiCandleParaData(hoje, negociacoes);
+		CandleFactory fabrica = new CandleFactory();
+		Candle candle = fabrica.constroiCandleParaData(hoje, negociacoes);
 
 		assertEquals(40.5, candle.getAbertura(), 0.00001);
 		assertEquals(42.3, candle.getFechamento(), 0.00001);
@@ -66,8 +66,8 @@ public class CandlestickFactoryTest {
 
 		List<Negociacao> negociacoes = Arrays.asList();
 
-		CandlestickFactory fabrica = new CandlestickFactory();
-		Candlestick candle = fabrica.constroiCandleParaData(hoje, negociacoes);
+		CandleFactory fabrica = new CandleFactory();
+		Candle candle = fabrica.constroiCandleParaData(hoje, negociacoes);
 
 		double dif = 0.0001;
 		assertEquals(0.0, candle.getVolume(), dif);
@@ -89,8 +89,8 @@ public class CandlestickFactoryTest {
 
 		List<Negociacao> negociacoes = Arrays.asList(n1, n2, n3, n4);
 
-		CandlestickFactory fabrica = new CandlestickFactory();
-		Candlestick candle = fabrica.constroiCandleParaData(hoje, negociacoes);
+		CandleFactory fabrica = new CandleFactory();
+		Candle candle = fabrica.constroiCandleParaData(hoje, negociacoes);
 
 	}
 
@@ -119,8 +119,8 @@ public class CandlestickFactoryTest {
 		List<Negociacao> negociacoes = Arrays.asList(negociacao1, negociacao2, negociacao3, negociacao4, negociacao5,
 				negociacao6, negociacao7, negociacao8);
 		
-		CandlestickFactory fabrica = new CandlestickFactory();
-		List<Candlestick> candles = fabrica.constroiCandles(negociacoes);
+		CandleFactory fabrica = new CandleFactory();
+		List<Candle> candles = fabrica.constroiCandles(negociacoes);
 		
 		assertEquals(3, candles.size());
 		assertEquals(40.5, candles.get(0).getAbertura(), 0.00001);
@@ -158,8 +158,8 @@ public class CandlestickFactoryTest {
 		List<Negociacao> negociacoes = Arrays.asList(negociacao8, negociacao7, negociacao6, negociacao5, negociacao4,
 				negociacao3, negociacao2, negociacao1);
 		
-		CandlestickFactory fabrica = new CandlestickFactory();
-		List<Candlestick> candles = fabrica.constroiCandles(negociacoes);
+		CandleFactory fabrica = new CandleFactory();
+		List<Candle> candles = fabrica.constroiCandles(negociacoes);
 		
 		assertEquals(3, candles.size());
 		assertEquals(40.5, candles.get(0).getAbertura(), 0.00001);
@@ -200,8 +200,8 @@ public class CandlestickFactoryTest {
 		
 		Collections.sort(negociacoes, new NegociacaoSort());
 		
-		CandlestickFactory fabrica = new CandlestickFactory();
-		List<Candlestick> candles = fabrica.constroiCandles(negociacoes);
+		CandleFactory fabrica = new CandleFactory();
+		List<Candle> candles = fabrica.constroiCandles(negociacoes);
 		
 		assertEquals(3, candles.size());		
 

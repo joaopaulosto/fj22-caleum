@@ -16,3 +16,9 @@ https://thiagovespa.com.br/blog/2011/01/24/mocking-com-soapui/
 
 07/11/2018 - Projeto funcionando no tomcat
 PAgiba 112 - 7.11 PAra Saber mais sobre paginação e ordenação.
+
+07/11/2018 - Projeto funcionando no tomcat
+PAgiba 118 - Capítulo 8 Refatoração: Os indicadores da Bolsa
+10/11/2018 - 8.5 Refatoracao pagina 126
+12/11/2018 - 9 Gráficos Interativos com PrimeFaces pagina 132
+20/11/2018 - 9.6 - Para Saber mais sobre Design Patter página 140

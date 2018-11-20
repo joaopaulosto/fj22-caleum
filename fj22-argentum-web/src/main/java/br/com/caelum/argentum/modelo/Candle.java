@@ -3,7 +3,7 @@ package br.com.caelum.argentum.modelo;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Candlestick {
+public class Candle {
 
 	private final double abertura;
 	private final double fechamento;
@@ -12,7 +12,7 @@ public class Candlestick {
 	private final double volume;
 	private final Calendar data;
 
-	public Candlestick(double abertura, double fechamento, double minimo, double maximo, double volume, Calendar data) {
+	public Candle(double abertura, double fechamento, double minimo, double maximo, double volume, Calendar data) {
 		super();
 		validaCampos(abertura, fechamento, minimo, maximo, volume, data);
 		this.abertura = abertura;
@@ -24,25 +24,25 @@ public class Candlestick {
 	}
 	private void validaCampos(double abertura, double fechamento, double minimo, double maximo, double volume, Calendar data) {
 		if (maximo < minimo) {
-			throw new IllegalArgumentException("O Preco Máximo não pode ser menor que o mínimo");
+			throw new IllegalArgumentException("O Preco Mï¿½ximo nï¿½o pode ser menor que o mï¿½nimo");
 		}	
 		if(data == null) {
-			throw new IllegalArgumentException("Data não pode ser nula");
+			throw new IllegalArgumentException("Data nï¿½o pode ser nula");
 		}
 		if(abertura < 0) {
-			throw new IllegalArgumentException("Abertura não pode ser negativo");
+			throw new IllegalArgumentException("Abertura nï¿½o pode ser negativo");
 		}
 		if(fechamento < 0) {
-			throw new IllegalArgumentException("Fechamento não pode ser negativo");
+			throw new IllegalArgumentException("Fechamento nï¿½o pode ser negativo");
 		}
 		if(minimo < 0) {
-			throw new IllegalArgumentException("Minimo não pode ser negativo");
+			throw new IllegalArgumentException("Minimo nï¿½o pode ser negativo");
 		}
 		if(maximo < 0) {
-			throw new IllegalArgumentException("Maximo não pode ser negativo");
+			throw new IllegalArgumentException("Maximo nï¿½o pode ser negativo");
 		}
 		if(volume < 0) {
-			throw new IllegalArgumentException("Volume não pode ser negativo");
+			throw new IllegalArgumentException("Volume nï¿½o pode ser negativo");
 		}
 	}
 
@@ -83,7 +83,7 @@ public class Candlestick {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		String data = sdf.format(this.getData().getTime());
 		return String.format(
-				"Abertura: %f, Fechamento: %f, Mínima: %f, Máxima: %f, Volume: %f, Data: %s, Baixa: %b, Alta: %b",
+				"Abertura: %f, Fechamento: %f, Mï¿½nima: %f, Mï¿½xima: %f, Volume: %f, Data: %s, Baixa: %b, Alta: %b",
 				this.getAbertura(), this.getFechamento(), this.getMinimo(), this.getMaximo(), this.getVolume(), data,
 				this.isBaixa(), this.isAlta());
 	}

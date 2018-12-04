@@ -14,7 +14,7 @@ public class ModiaMovelPonderadaTest {
 		SerieTemporal serie = GeradorDeSerie.criaSerie(1, 2, 3, 4, 5, 6);
 		
 		int intervalo = 3;
-		MediaMovelPonderada mmp = new MediaMovelPonderada(intervalo);
+		MediaMovelPonderada mmp = new MediaMovelPonderada(new IndicadorFechamento(), intervalo);
 		
 		//Ex: calcula(2): 1*1 + 2*2 + 3*3 = 14. Divide por 3, da 14/6 
 		assertEquals(14.0/intervalo, mmp.calcula(2, serie), 0.0001);

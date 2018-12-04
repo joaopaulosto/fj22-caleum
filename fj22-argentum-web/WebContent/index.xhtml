@@ -9,15 +9,36 @@
 </h:head>
 <h:body>
 
-	<p:chart type="line" model="#{argentumBean.modeloGrafico}" />
-	
+
+	<h:form id="frmFiltroGrafico">
+		<h:panelGrid columns="5">
+			<h:outputLabel value="Média Móvel:" />
+			<p:selectOneButton value="#{argentumBean.nomeMedia}">
+				<f:selectItem itemLabel="Simples" itemValue="MediaMovelSimples" />
+				<f:selectItem itemLabel="Ponderada" itemValue="MediaMovelPonderada" />
+			</p:selectOneButton>
+
+			<h:outputLabel value="Indicador Base:" />
+			<p:selectOneButton value="#{argentumBean.nomeIndicadorBase}">
+				<f:selectItem itemLabel="Abertura" itemValue="IndicadorAbertura" />
+				<f:selectItem itemLabel="Fechamento" itemValue="IndicadorFechamento" />
+			</p:selectOneButton>
+			
+			<p:commandButton value="Gerar Gráfico" update=":grafico" action="#{argentumBean.geraGrafico}" />
+		</h:panelGrid>
+
+
+
+	</h:form>
+	<p:chart id="grafico" type="line" model="#{argentumBean.modeloGrafico}" />
+
 	<h:form id="listaNegociacao">
 		<p:dataTable var="negociacao" value="#{argentumBean.negociacaoes}"
 			paginator="true" rows="20">
 			<p:column sortBy="#{negociacao.preco}" headerText="Preço">
 				<h:outputText value="#{negociacao.preco}" />
 			</p:column>
-			<p:column sortBy="#{negociacao.quantidade}"  headerText="Quantidade">
+			<p:column sortBy="#{negociacao.quantidade}" headerText="Quantidade">
 				<h:outputText value="#{negociacao.quantidade}" />
 			</p:column>
 			<p:column sortBy="#{negociacao.volume}" headerText="Volume">

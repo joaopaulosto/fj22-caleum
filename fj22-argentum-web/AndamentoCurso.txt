@@ -23,3 +23,7 @@ PAgiba 118 - Capítulo 8 Refatoração: Os indicadores da Bolsa
 12/11/2018 - 9 Gráficos Interativos com PrimeFaces pagina 132
 20/11/2018 - 9.6 - Para Saber mais sobre Design Patter página 140
 21/11/2018 - 10.4 - Indicadores Mais ElaboradosPagina 151
+25/11/2018 - 11.4 - Introdução a Reflection - 162
+03/12/2018 - 11.9 - Melhorando a orientação a objeto - 168
+
+
